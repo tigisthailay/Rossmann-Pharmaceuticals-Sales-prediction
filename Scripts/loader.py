@@ -31,23 +31,10 @@ class LoadData:
         return df
 
     def read_excel(self, excel_file, startRow=0) -> pd.DataFrame:
-        """Excel file reader to open and read excel files into a panda dataframe.
-        Args:
-        -----
-        excel_file: str - path of a excel file
-        engine: str - sets the default engine used by pandas to load the excel file
-        startRow: int - sets the first row in excel sheet where pandas should start loading from
-        """
+        
         df = pd.read_excel(excel_file, engine='openpyxl')
         return df
 
     def read_csv(self, csv_file) -> pd.DataFrame:
-        """Csv file reader to open and read csv files into a panda dataframe.
-        Args:
-        -----
-        csv_file: str - path of a json file
-
-        Returns
-        -------
-        dataframe containing data extracted from the csv file"""
+       
         return pd.read_csv(csv_file)
