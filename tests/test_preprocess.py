@@ -10,17 +10,12 @@ from pandas._libs.tslibs.timestamps import Timestamp
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../scripts')))
 
-from preprocess import Preprocess
-from logger import Logger
+from preprocessing import Preprocess
+from logger import LoggerClass
 
 
 class TESTPHARMASALES(unittest.TestCase):
-    """A class for unit-testing function in the preprocess.py file.
-
-    Args:
-        unittest.TestCase this allows the new class to inherit
-        from the unittest module
-    """
+    
 
     def setUp(self) -> pd.DataFrame:
         """Dataframe that contains the data.
@@ -34,28 +29,25 @@ class TESTPHARMASALES(unittest.TestCase):
                                          {'Date':
                                          '8/5/2014 12:01', 'Store': 4, 'DayOfWeek': 1, 'Sales': 572, 'Customers': 1321, 'Open': 0, 'SchoolHoliday': 0, 'StateHoliday': 1, 'StoreType': 'D', 'Assortment': 'b', 'CompetitionDistance': 432, 'CompetitionOpenSinceMonth': 2000, 'Year': 2001, 'weekOfyear': 21})
 
-        # tweet_df = self.df.get_tweet_df()
+    def test_get_categorical_columns(self):
+        """Test get categorical columns module."""
+        df = Preprocess().get_categorical_columns(self.df)
+        assert df == ['Date', 'StoreType', 'Assortment']
+ 
+    def test_get_numerical_columns(self):
+        """Test get numerical columns module."""
+        df = Preprocess().get_numerical_columns(self.df)
+        assert df == ['Store', 'DayOfWeek', 'Sales', 'Customers', 'Open', 'SchoolHoliday', 'StateHoliday', 'CompetitionDistance', 'CompetitionOpenSinceMonth', 'Year', 'weekOfyear']
+        
+    def test_drop_duplicate(self):
+        """Test convert to datetime module."""
+        df = Preprocess().drop_duplicate(self.df)
+        assert df.shape[0] == 1
 
     def test_convert_to_datetime(self):
         """Test convert to datetime module."""
         df = Preprocess().convert_to_datetime(self.df, 'Date')
         assert type(df['Date'][0]) is Timestamp
         
-    def test_get_numerical_columns(self):
-        """Test get numerical columns module."""
-        df = Preprocess().get_numerical_columns(self.df)
-        assert df == ['Store', 'DayOfWeek', 'Sales', 'Customers', 'Open', 'SchoolHoliday', 'StateHoliday', 'CompetitionDistance', 'CompetitionOpenSinceMonth', 'Year', 'weekOfyear']
-        
-    def test_get_categorical_columns(self):
-        """Test get categorical columns module."""
-        df = Preprocess().get_categorical_columns(self.df)
-        assert df == ['Date', 'StoreType', 'Assortment']
-
-    def test_drop_duplicate(self):
-        """Test convert to datetime module."""
-        df = Preprocess().drop_duplicate(self.df)
-        assert df.shape[0] == 1
-
-
 if __name__ == '__main__':
     unittest.main()
