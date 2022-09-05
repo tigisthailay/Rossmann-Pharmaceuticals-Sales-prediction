@@ -3,7 +3,7 @@
 import logging
 
 
-class LoggerClass:
+class Logger:
     """Logger class for logging messages to a file."""
 
     def __init__(self, file_name: str, basic_level=logging.INFO):

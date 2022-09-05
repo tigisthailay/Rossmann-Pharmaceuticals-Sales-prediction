@@ -10,7 +10,9 @@ import seaborn as sns
 from pandas.plotting import scatter_matrix
 # from pandas_profiling import ProfileReport
 
-
+def setup():
+  plt.figure(figsize=(12,6))
+  
 class Plotting:
     def __init__(self) -> None:
         """Initilize class."""
@@ -147,6 +149,13 @@ class Plotting:
         # plt.show()
 
     
+      
+    def bar(x, y, title=''):
+      setup()
+      plt.title(title)
+      sns.barplot(x=x, y=y)
+      plt.show()
+      return
 
     def plot_hist_muli(self, df):
         """Plot multiple Histogram."""
