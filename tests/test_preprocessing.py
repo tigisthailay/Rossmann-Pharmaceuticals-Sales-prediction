@@ -18,11 +18,7 @@ class TESTPHARMASALES(unittest.TestCase):
     
 
     def setUp(self) -> pd.DataFrame:
-        """Dataframe that contains the data.
-
-        Returns:
-            pd.DataFrame: DF from train_joined.csv file.
-        """
+        
         self.df = self.df = pd.DataFrame({'Date':
                                          '4/4/2021 12:01', 'Store': 5, 'DayOfWeek': 3, 'Sales': 232, 'Customers': 4321, 'Open': 1, 'SchoolHoliday': 1, 'StateHoliday': 1, 'StoreType': 'A', 'Assortment': 'c', 'CompetitionDistance': 133, 'CompetitionOpenSinceMonth': 1999, 'Year': 1999, 'weekOfyear': 12}, {'Date':
                                          '8/5/2014 12:01', 'Store': 4, 'DayOfWeek': 1, 'Sales': 572, 'Customers': 1321, 'Open': 0, 'SchoolHoliday': 0, 'StateHoliday': 1, 'StoreType': 'D', 'Assortment': 'b', 'CompetitionDistance': 432, 'CompetitionOpenSinceMonth': 2000, 'Year': 2001, 'weekOfyear': 21},
