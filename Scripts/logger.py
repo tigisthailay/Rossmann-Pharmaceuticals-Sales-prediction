@@ -10,7 +10,7 @@ class LoggerClass:
         """Initilize logger class with file name to be written and default log level.
 
         """
-        # creates a logger
+        # createing a logger
         logger = logging.getLogger(__name__)
 
         # set log level
