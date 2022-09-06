@@ -1,1 +1,6 @@
 /train.csv
+/test.csv
+/train_joined.csv
+/train_processed.csv
+/test_processed.csv
+/store.csv
