@@ -1,4 +1,4 @@
-name: Rossmann-Pharmaceuticals-Sales-prediction CI
+name: Rossmann-Pharmaceuticals-Sales-prediction
 
 on:
   push:
