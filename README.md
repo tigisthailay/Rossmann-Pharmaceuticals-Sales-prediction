@@ -13,7 +13,41 @@ The notebooks folder contains notebooks for explanatory data-analysis and modell
 1. Clone the repository
 2. You can run the notebooks on jupyter notebook or cloud services like Google Colab.
 3. Follow the following steps to run the web dashboard.
-
+   $ # Get the code
+$ git clone https://https://github.com/tigisthailay/Rossmann-Pharmaceuticals-Sales-prediction.git
+$
+$ cd flask-boilerplate-dashboard-argon
+$
+$ # Virtualenv modules installation (Unix based systems)
+$ virtualenv env
+$ source env/bin/activate
+$
+$ # Virtualenv modules installation (Windows based systems)
+$ # virtualenv env
+$ # .\env\Scripts\activate
+$
+$ # Install modules - SQLite Database
+$ pip3 install -r requirements.txt
+$
+$ # OR with PostgreSQL connector
+$ # pip install -r requirements-pgsql.txt
+$
+$ # Set the FLASK_APP environment variable
+$ (Unix/Mac) export FLASK_APP=run.py
+$ (Windows) set FLASK_APP=app.py
+$ (Powershell) $env:FLASK_APP = ".\app.py"
+$
+$ # Set up the DEBUG environment
+$ # (Unix/Mac) export FLASK_ENV=development
+$ # (Windows) set FLASK_ENV=development
+$ # (Powershell) $env:FLASK_ENV = "development"
+$
+$ # Start the application (development mode)
+$ # --host=0.0.0.0 - expose the app on all network interfaces (default 127.0.0.1)
+$ # --port=5000    - specify the app port (default 5000)  
+$ flask run --host=0.0.0.0 --port=5000
+$
+$ # Access the d
 ## Procedure
 The project uses seasonal decomposition and visualizations to understand the historical sales of Rossmann Stores. LinearRegression and RandomForrestRegressor were used to make predictions for future sales. The predictions are served on a web application dashboard built using Flask and deployed on Heroku.
 
