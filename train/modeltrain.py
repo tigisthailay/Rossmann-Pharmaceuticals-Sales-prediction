@@ -1,11 +1,12 @@
-with open('files.txt', 'w') as file:
-      file.write('Model Performance\n')
-      file.write('\n')     
-      file.write('Linear Regression\n')
-      file.write('Best Score: 59.3%\n')
-      file.write('\n')  
-      file.write('Decision Tree Regression\n')
-      file.write('Best Score: 24.72%\n')
-      file.write('\n')  
-      file.write('RandomForest Regression\n')
-      file.write('Best Score: 64.48%\n')
+
+with open('results.txt', 'w') as result:
+      result.write('Model Performance\n')
+      result.write('\n')     
+      result.write('Linear Regression\n')
+      result.write('Best Score: 59.3%\n')
+      result.write('\n')  
+      result.write('Decision Tree Regression\n')
+      result.write('Best Score: 24.72%\n')
+      result.write('\n')  
+      result.write('RandomForest Regression\n')
+      result.write('Best Score: 64.48%\n')
