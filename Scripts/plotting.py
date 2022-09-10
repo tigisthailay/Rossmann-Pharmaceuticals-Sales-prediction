@@ -212,3 +212,10 @@ class Plotting:
         plt.plot(model.predict(x)[:40], color='red', label='Predicted')
         plt.legend()
         plt.savefig(path)
+
+    def bar(x, y, title=''):
+        setup()
+        plt.title(title)
+        sns.barplot(x=x, y=y)
+        plt.show()
+        return

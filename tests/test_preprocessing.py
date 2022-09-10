@@ -16,7 +16,7 @@ from preprocessing import Preprocess
 
 class TESTPHARMASALES(unittest.TestCase):
     
-
+    '''
     def setUp(self) -> pd.DataFrame:
         
         self.df = self.df = pd.DataFrame({'Date':
@@ -34,7 +34,7 @@ class TESTPHARMASALES(unittest.TestCase):
         """Test get numerical columns module."""
         df = Preprocess().get_numerical_columns(self.df)
         assert df == ['Store', 'DayOfWeek', 'Sales', 'Customers', 'Open', 'SchoolHoliday', 'StateHoliday', 'CompetitionDistance', 'CompetitionOpenSinceMonth', 'Year', 'weekOfyear']
-    '''
+    
     def test_drop_duplicate(self):
         """Test convert to datetime module."""
         df = Preprocess().drop_duplicate(self.df)

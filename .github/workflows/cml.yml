@@ -2,8 +2,9 @@ name: Rossmann-Pharmaceuticals-Sales-prediction
 on: [push]
 jobs:
   run:
+    permissions: write-all
     runs-on: ubuntu-latest
-    # optionally use a convenient Ubuntu LTS + DVC + CML image
+  
     steps:
       - uses: actions/checkout@v2
       - uses: iterative/setup-cml@v1
@@ -18,7 +19,14 @@ jobs:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           # Post reports as comments in GitHub PRs
-          cat file.txt >> report.md
+          #cat result.txt >> report.md
           
+          echo "### Model Metrics" > report.md
+          cat train/file.txt >> report.md
+          echo "### Data Visualization" >> report.md
+          echo "Predicted vs. actual accuracy" >> report.md
+          cml-publish train/prediction.png --md >> report.md
+          echo "Feature Importance" >> report.md
+          cml-publish train/feature_importance.png --md >> report.md
           
           cml-send-comment report.md
