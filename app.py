@@ -6,12 +6,17 @@ import altair as alt
 import plotly.express as px
 import pickle
 import math
+from sklearn.pipeline import Pipeline
+from sklearn.impute import SimpleImputer
+from sklearn.compose import ColumnTransformer
+from sklearn.preprocessing import StandardScaler
+from sklearn.model_selection import train_test_split
 
 st.set_page_config(page_title="Dashboard | Rossmann Pharmaceuticals Sales prediction ", layout="wide")
 st.markdown("<h1 style='color:#0b4eab;font-size:36px;border-radius:10px;'>Pharmaceutical Sales Prediction Model </h1>", unsafe_allow_html=True)
 
 # loading the trained model
-pickle_in = open('models/linearregression-2022-09-09-10-21-22.pkl', 'rb') 
+pickle_in = open('C:/Users/user/Desktop/10Academy/Rossmann-Pharmaceuticals-Sales-prediction/models/linearregression-2022-09-09-10-21-22.pkl', 'rb') 
 calculator = pickle.load(pickle_in)
  
 @st.cache()
@@ -79,7 +84,7 @@ def main():
         Month = st.number_input('Enter Month')
         Day = st.number_input('Enter Day')
         WeekOfYear = st.number_input('Enter WeekOfYear')
-         Assortment = st.selectbox('Choose Assortment',("a","b","c")) 
+        Assortment = st.selectbox('Choose Assortment',("a","b","c")) 
         CompetitionDistance = st.number_input('Enter Competition distanc')
 
         Promo2 = st.selectbox('Are you in Promo2',(1,0))
