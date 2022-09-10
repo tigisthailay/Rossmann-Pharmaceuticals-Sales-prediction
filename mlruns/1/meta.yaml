@@ -1,0 +1,4 @@
+artifact_location: file:///C:/Users/Ekubay/Documents/Rossmann_Pharmaceutical_sales_Prediction/notebooks/mlruns/1
+experiment_id: '1'
+lifecycle_stage: active
+name: prediction

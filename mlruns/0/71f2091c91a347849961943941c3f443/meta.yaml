@@ -1,0 +1,15 @@
+artifact_uri: ./mlruns/0/71f2091c91a347849961943941c3f443/artifacts
+end_time: 1662631756352
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+name: ''
+run_id: 71f2091c91a347849961943941c3f443
+run_uuid: 71f2091c91a347849961943941c3f443
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1662631756098
+status: 3
+tags: []
+user_id: Ekubay

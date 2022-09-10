@@ -13,20 +13,12 @@ jobs:
           
           pip install -r requirements.txt
           
-          python Scripts/modeltrain.py
+          python train/modeltrain.py
       - name: Write CML report
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           # Post reports as comments in GitHub PRs
-          #cat result.txt >> report.md
-          
-          echo "### Model Metrics" > report.md
-          cat train/file.txt >> report.md
-          echo "### Data Visualization" >> report.md
-          echo "Predicted vs. actual accuracy" >> report.md
-          cml-publish train/prediction.png --md >> report.md
-          echo "Feature Importance" >> report.md
-          cml-publish train/feature_importance.png --md >> report.md
-          
+          #cat file.txt >> report.md
+  
           cml-send-comment report.md
