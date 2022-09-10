@@ -1,4 +1,4 @@
-with open('file.txt', 'w') as result:
+with open('files.txt', 'w') as file:
       file.write('Model Performance\n')
       file.write('\n')     
       file.write('Linear Regression\n')
